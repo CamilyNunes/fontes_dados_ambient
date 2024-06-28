@@ -1,0 +1,240 @@
+---
+title: "Fichamento/leitura"
+author: "Camily"
+date: "2024-06-27"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Fichamento da monografia "BIOMA STATS: UM PACOTE R PARA ANÁLISE DE USO E OCUPAÇÃO DO SOLO NO TERRITÓRIO BRASILEIRO" realizado pelo Kaik Fontana Octaviano
+
+-   Objetivo do trabalho científico:
+
+    -   Compreender os padrões de uso e ocupação do solo e a ocorrência
+        de transições na paisagem natural.
+
+    -   A disponibilidade de dados seriais acerca do uso e ocupação do
+        solo possibilita o diagnóstico ambiental, a detecção de áreas
+        vulneráveis à ação antrópica e o planejamento de políticas de
+        conservação ambiental.
+
+    -   O objetivo deste trabalho foi o desenvolvimento do Bioma Stats,
+        um programa computacional que visa a construção de relatórios
+        automatizados sobre o uso e a ocupação do solo em território
+        brasileiro.
+
+    -   O Bioma Stats é implementado em linguagem computacional R, com
+        código-fonte aberto e versões de livre distribuição.
+
+    -   Espera-se que o programa seja uma ferramenta de impacto na área
+        ambiental, contribuindo para estudos de uso e ocupação do solo,
+        bem como na geração de informações úteis para a gestão ambiental
+        e na construção de políticas públicas de combate ao
+        desmatamento, na conservação do meio ambiente, na agricultura de
+        precisão, na pecuária, entre outros.
+
+-   Palavras-chave:
+
+    -   Geotecnologia: é a área do conhecimento que realiza o tratamento
+        de dados georreferenciados a partir de técnicas matemáticas e
+        computacionais, auxiliando diversas áreas do conhecimento.
+
+    -   Estatística Computacional;
+
+    -   Linguagem R;
+
+    -   Desmatamento;
+
+# 1 INTRODUÇÃO
+
+-   O estudo de dados relacionados à distribuição geográfica de recursos
+    minerais, fauna, flora e atributos físicos da paisagem é uma tarefa
+    importante no contexto do Brasil, país com dimensão continental e
+    com grande demanda de informações para a tomada de decisões na
+    resolução de problemas ambientais, rurais e urbanos.
+
+-   Com o avanço da Tecnologia da Informação, o acesso às informações
+    geográficas e aso dados georreferenciados tem se tornado cada vez
+    mais simples (CÂMARA et al., 2001).
+
+-   Aliado a Geotecnologia, o Sistema de Informação Geográfica (SIG)
+    realiza a integração de softwares, hardwares, procedimentos e
+    usuários, possibilitando a coleta, o armazenamento, o processamento,
+    a visualização e a análise de dados georreferenciados (TEIXEIRA,
+    1995).
+
+-   Dentre os softwares SIG utilizados para geoprocessamento, destaca-se
+    o Quantum Geographic Information System (QGIS) como software livre e
+    em constante desenvolvimento, capaz desuportar diversos formatos de
+    dados, tais como: arquivos vetoriais (.shp, .dbf e .shx), imagens
+    matriciais (Grid ArcInfo Binary, Grid ArcInfo ASCII, GeoTIFF, ERDAS
+    IMAGINE, entre outros), banco de dados (.csv, .xlsx, .xml, .txt,
+    .json, entre outros) e funcionalidades (QGIS DEVELOPMENT TEAM,
+    2022).
+
+-   **De forma alternativa aos softwares de SIG tradicionais, o sistema
+    R tem se destacado como recurso para a manipulação e a análise de
+    dados georreferenciados (R CORE TEAM, 2021). O R contém uma extensa
+    variedade de pacotes estatísticos como, por exemplo, para a
+    modelagem linear e não linear, para testes estatísticos clássicos,
+    para análises de séries temporais, classificações e agrupamentos,
+    para a visualização em tabelas e gráficos, entre outros, além de ser
+    considerado extremamente extensível, destacando-se por não possuir
+    custos de licença e por seu código ser aberto (R CORE TEAM, 2021).**
+
+-   **O R ainda conta com o ambiente de desenvolvimento integrado
+    RStudio (RSTUDIO TEAM, 2021).**
+
+-   **A IDE RStudio foi desenvolvida em prol de facilitar a utilização
+    da linguagem R, agrupando diversas funcionalidades e proporcionando
+    maior interação com o usuário na visualização de comandos e funções,
+    importação de dados, resultados e gráficos, além de criação de
+    documentos (HENNING et al., 2016).**
+
+-   Os softwares de SIG processam variados tipos de dados
+    georreferenciados, coletados através de técnicas integrativas que
+    envolvem sensores, satélites, GNSS, e até trabalhos em 13 campo.
+
+-   Neste contexto destacam-se as imagens obtidas a partir de
+    sensoriamento remoto, adquiridas por drone ou satélites, e que visam
+    o monitoramento dos diferentes usos e ocupações da superfície
+    terrestre. O estudo do uso e ocupação da Terra é de grande
+    relevância na engenharia ambiental, uma vez que permite examinar
+    aspectos como o desenvolvimento das cidades e infraestruturas, nível
+    de preservação ou antropização da paisagem, e até mesmo atividades
+    ilegais de desmatamento e mineração (IBGE, 2013). A plataforma
+    MapBiomas possui papel fundamental na classificação e distribuição
+    de dados sobre o uso e ocupação do solo em território brasileiro
+    (SOUZA JR et al., 2020).
+
+-   O projeto MapBiomas é uma iniciativa multi-institucional gratuita e
+    colaborativa, composta por universidades, startups de tecnologia e
+    ONGs, que por meio do uso de métodos avançados de processamento em
+    nuvem, tecnologia operacional e big data (imagens Landsat da
+    plataforma Google Earth Engine), concentra os principais dados
+    georreferenciados acerca dos biomas brasileiros e transições na
+    paisagem.
+
+-   O produto mais recente de cobertura do solo da plataforma (Coleção
+    7.0), que contempla dados de 1985 a 2020, utiliza imagens de
+    diversos satélites, tais como Landsat 5 TM, Landsat 7 ETM+, Landsat
+    8 OLI, Sentinel-2A e Sentinel-2B, onde a frequência de aquisição das
+    imagens varia de acordo com a resolução do satélite (MAPBIOMAS,
+    2022).
+
+-   Os dados georreferenciados do MapBiomas podem ser visualizados e
+    processados pelos SIGs, tal como o software QGIS, entretanto a
+    coleta e análise de séries temporais de uso e ocupação do solo
+    necessitam de pré-processamento, etapa que se realizada em softwares
+    convencionais, como o QGIS, e exige do usuário diversas tarefas
+    manuais e repetitivas, além de recursos como computadores potentes,
+    salas com ambientação e mão de obra qualificada.
+
+-   Nos estudos de progressão do uso e ocupação do solo, o
+    pré-processamento sempre é conduzido de maneira similar, seguindo a
+    mesma sequência lógica de passos: conexão com a base de dados,
+    definição do recorte, reprojeção e aplicação de uma máscara,
+    transformação dos dados em tabela, cálculo de estatísticas zonais,
+    resumo e visualização dos dados através de técnicas estatísticas.
+
+-   Na abordagem convencional, muitos passos são repetidos, imagem a
+    imagem, inflacionando o tempo gasto em tarefas manuais e a
+    possibilidade de erros.
+
+-   Há, portanto, demanda para a automação da análise de séries
+    históricas de uso e ocupação do solo, que possa eliminar quase por
+    completo o trabalho manual.
+
+-   Aqui, a primeira versão do programa Bioma Stats é apresentada.
+
+-   **O Bioma Stats é um programa computacional implementado em
+    linguagem de programação R, open source e de livre distribuição (R
+    CORE14TEAM, 2021; RSTUDIO TEAM, 2021) que visa facilitar a obtenção
+    e o tratamento estatístico das séries de uso e ocupação do solo nos
+    biomas brasileiros.**
+
+-   **Suas funções permitem automatizar o cálculo de estatísticas zonais
+    e fornecer análises ambientais customizadas a partir de dados
+    obtidos pela plataforma MapBiomas.**
+
+# 2 FUNDAMENTAÇÃO 
+
+## TEÓRICA 2.2 Geotecnologia 
+
+-   Geotecnologia é a área do conhecimento que realiza o tratamento de
+    dados georreferenciados a partir de técnicas matemáticas e
+    computacionais, auxiliando diversas áreas do conhecimento, tais
+    como:
+
+    -   Cartografia;
+
+    -   Energia e;
+
+    -   Planejamento Urbano;
+
+    -   Transporte;
+
+    -   Análise de Recursos Naturais;
+
+    -   Agricultura;
+
+    -   entre outros (CÂMARA et al., 2001).
+
+-   Dados espaciais se referem a qualquer tipo de informação que tem uma
+    componente geográfica ou espacial, ou seja, que pode ser relacionada
+    a uma posição no espaço. Isso pode incluir dados de satélite, mapas,
+    imagens de sensoriamento remoto, entre outros (ARONOFF, 1989;
+    BORGES, 1997).
+
+-   Desta forma, dados georreferenciados são dados espacializados que
+    possuem uma localização geográfica específica, geralmente vinculados
+    a um sistema de referência espacial e representados por coordenadas
+    de latitude de longitude (CONCAR, 2010).
+
+-   Dentre as formas de dados geoespaciais, destacam-se os dados
+    vetoriais e matriciais (rasters) (TENNEKES and NOWOSAD, 2021).
+    Segundo Calles (2021), dados vetoriais são baseados em geometria
+    vetorial, que utiliza de pontos, linhas e polígonos para descrever
+    objetos e suas características no mundo real. Esses dados possuem
+    propriedades relacionadas ao tamanho, forma, cor e espessura de um
+    objeto, e podem ser armazenados em diferentes formatos de arquivo,
+    como: shapefiles, KML, GeoJSON, entre outros. A aplicação de dados
+    vetoriais na Geotecnologia é variada, incluindo limites de
+    propriedades, de Áreas de Proteção Permanente (APPs), de Unidades de
+    Conservação, rios, redes de transporte, mapas de cartografia, entre
+    outros elementos que podem ser definidos a partir de suas geometrias
+    e representados por pontos, linhas e polígonos. Já dados matriciais,
+    ou rasters, são representados a partir da organização de informação
+    através de uma grade regular de células ou pixels, formando uma
+    matriz bidimensional ou tridimensional. Cada célula representa uma
+    pequena área no espaço, variando sua área de acordo com a resolução
+    da imagem, e o valor armazenado indica uma propriedade ou
+    característica do local representado pela célula. Dados matriciais
+    são utilizados para representar fenômenos contínuos, tais como:
+    elevação do terreno; temperatura; umidade; cobertura vegetal; e
+    outros atributos que podem ser medidos em cada ponto do espaço
+    (CÂMARA, 2003). A obtenção desses dados, geralmente, ocorre por meio
+    de registros de sensores remotos, em aviões, drones e satélites, que
+    capturam as informações sobre a superfície da Terra em forma 16 de
+    imagens e armazenam em diferentes formatos de arquivos (TIFF, JPEG,
+    GeoTIFF, entre outros) (CÂMARA and MONTEIRO, 2005). No Brasil, a
+    Geoinformática tem sido amplamente utilizada em aplicações como o
+    monitoramento de desmatamento (MAEDA et al., 2008; SZILASSI et al.,
+    2006; JAIN et al., 2001), a gestão de recursos hídricos (MILLER et
+    al., 2007; FERRAZ et al., 1999) e o planejamento urbano (PRENZEL,
+    2004; FASA and CHAN, 2000). Além disso, também é importante para a
+    identificação de áreas vulneráveis a desastres naturais (EMBRAPA,
+    2014) e para a implementação de políticas públicas (SOARES e
+    ESPINDOLA, 2008). O geoprocessamento é realizado através dos SIGs,
+    constituídos de ferramentas e técnicas para coletar, armazenar,
+    processar, analisar e visualizar os dados georreferenciados
+    (BURROUGH and MCDONNELL, 1998). Diversas informações podem ser
+    encapsuladas em SIGs, tais como informações geográficas e mapas,
+    dados de sensores e imagens, tabelas de variáveis assessórias,
+    informações demográficas, ecológicas e socioeconômicas (REIBEL,
+    2007). Os SIGs são ferramentas importantes para a tomada de decisão
+    em engenharia ambiental, uma vez que possibilitam a visualização de
+    dados importantes no espaço, permitindo o diagnóstico ambiental e a
+    modelagem; eles também permitem a simulação de cenários futuros.
