@@ -43,7 +43,7 @@ editor_options:
 
     -   Estatística Computacional;
 
-    -   Linguagem R;
+    -   Linguagem R:
 
     -   Desmatamento;
 
@@ -159,9 +159,9 @@ editor_options:
     e fornecer análises ambientais customizadas a partir de dados
     obtidos pela plataforma MapBiomas.**
 
-# 2 FUNDAMENTAÇÃO 
+# 2 FUNDAMENTAÇÃO TEÓRICA
 
-## TEÓRICA 2.2 Geotecnologia 
+## 2.2 Geotecnologia
 
 -   Geotecnologia é a área do conhecimento que realiza o tratamento de
     dados georreferenciados a partir de técnicas matemáticas e
@@ -182,11 +182,12 @@ editor_options:
 
     -   entre outros (CÂMARA et al., 2001).
 
--   Dados espaciais se referem a qualquer tipo de informação que tem uma
+-   Dados espaciais se referem a qualquer tipo de informação que tem um
     componente geográfica ou espacial, ou seja, que pode ser relacionada
-    a uma posição no espaço. Isso pode incluir dados de satélite, mapas,
-    imagens de sensoriamento remoto, entre outros (ARONOFF, 1989;
-    BORGES, 1997).
+    a uma posição no espaço.
+
+-   **Isso pode incluir dados de satélite, mapas, imagens de
+    sensoriamento remoto, entre outros (ARONOFF, 1989; BORGES, 1997).**
 
 -   Desta forma, dados georreferenciados são dados espacializados que
     possuem uma localização geográfica específica, geralmente vinculados
@@ -195,46 +196,138 @@ editor_options:
 
 -   Dentre as formas de dados geoespaciais, destacam-se os dados
     vetoriais e matriciais (rasters) (TENNEKES and NOWOSAD, 2021).
-    Segundo Calles (2021), dados vetoriais são baseados em geometria
+
+-   Esses dados possuem propriedades relacionadas ao tamanho, forma, cor
+    e espessura de um objeto, e podem ser armazenados em diferentes
+    formatos de arquivo, como: shapefiles, KML, GeoJSON, entre outros.
+
+-   Segundo Calles (2021), dados vetoriais são baseados em geometria
     vetorial, que utiliza de pontos, linhas e polígonos para descrever
-    objetos e suas características no mundo real. Esses dados possuem
-    propriedades relacionadas ao tamanho, forma, cor e espessura de um
-    objeto, e podem ser armazenados em diferentes formatos de arquivo,
-    como: shapefiles, KML, GeoJSON, entre outros. A aplicação de dados
-    vetoriais na Geotecnologia é variada, incluindo limites de
-    propriedades, de Áreas de Proteção Permanente (APPs), de Unidades de
-    Conservação, rios, redes de transporte, mapas de cartografia, entre
-    outros elementos que podem ser definidos a partir de suas geometrias
-    e representados por pontos, linhas e polígonos. Já dados matriciais,
-    ou rasters, são representados a partir da organização de informação
-    através de uma grade regular de células ou pixels, formando uma
-    matriz bidimensional ou tridimensional. Cada célula representa uma
-    pequena área no espaço, variando sua área de acordo com a resolução
-    da imagem, e o valor armazenado indica uma propriedade ou
-    característica do local representado pela célula. Dados matriciais
-    são utilizados para representar fenômenos contínuos, tais como:
-    elevação do terreno; temperatura; umidade; cobertura vegetal; e
-    outros atributos que podem ser medidos em cada ponto do espaço
-    (CÂMARA, 2003). A obtenção desses dados, geralmente, ocorre por meio
-    de registros de sensores remotos, em aviões, drones e satélites, que
-    capturam as informações sobre a superfície da Terra em forma 16 de
-    imagens e armazenam em diferentes formatos de arquivos (TIFF, JPEG,
-    GeoTIFF, entre outros) (CÂMARA and MONTEIRO, 2005). No Brasil, a
-    Geoinformática tem sido amplamente utilizada em aplicações como o
-    monitoramento de desmatamento (MAEDA et al., 2008; SZILASSI et al.,
-    2006; JAIN et al., 2001), a gestão de recursos hídricos (MILLER et
-    al., 2007; FERRAZ et al., 1999) e o planejamento urbano (PRENZEL,
-    2004; FASA and CHAN, 2000). Além disso, também é importante para a
-    identificação de áreas vulneráveis a desastres naturais (EMBRAPA,
-    2014) e para a implementação de políticas públicas (SOARES e
-    ESPINDOLA, 2008). O geoprocessamento é realizado através dos SIGs,
-    constituídos de ferramentas e técnicas para coletar, armazenar,
-    processar, analisar e visualizar os dados georreferenciados
-    (BURROUGH and MCDONNELL, 1998). Diversas informações podem ser
-    encapsuladas em SIGs, tais como informações geográficas e mapas,
-    dados de sensores e imagens, tabelas de variáveis assessórias,
-    informações demográficas, ecológicas e socioeconômicas (REIBEL,
-    2007). Os SIGs são ferramentas importantes para a tomada de decisão
-    em engenharia ambiental, uma vez que possibilitam a visualização de
+    objetos e suas características no mundo real.
+
+-   A aplicação de dados vetoriais na Geotecnologia é variada, incluindo
+    limites de propriedades, de Áreas de Proteção Permanente (APPs), de
+    Unidades de Conservação, rios, redes de transporte, mapas de
+    cartografia, entre outros elementos que podem ser definidos a partir
+    de suas geometrias e representados por pontos, linhas e polígonos.
+
+-   Já dados matriciais, ou rasters, são representados a partir da
+    organização de informação através de uma grade regular de células ou
+    pixels, formando uma matriz bidimensional ou tridimensional.
+
+-   Cada célula representa uma pequena área no espaço, variando sua área
+    de acordo com a resolução da imagem, e o valor armazenado indica uma
+    propriedade ou característica do local representado pela célula.
+
+-   Dados matriciais são utilizados para representar fenômenos
+    contínuos, tais como:
+
+    -   elevação do terreno;
+
+    -   temperatura;
+
+    -   umidade;
+
+    -   cobertura vegetal;
+
+    -   e outros atributos que podem ser medidos em cada ponto do espaço
+        (CÂMARA, 2003).
+
+-   **A obtenção desses dados, geralmente, ocorre por meio de registros
+    de sensores remotos, em aviões, drones e satélites, que capturam as
+    informações sobre a superfície da Terra em forma 16 de imagens e
+    armazenam em diferentes formatos de arquivos (TIFF, JPEG, GeoTIFF,
+    entre outros) (CÂMARA and MONTEIRO, 2005).**
+
+-   No Brasil, a Geoinformática tem sido amplamente utilizada em
+    aplicações como o monitoramento de desmatamento (MAEDA et al., 2008;
+    SZILASSI et al., 2006; JAIN et al., 2001), a **gestão de recursos
+    hídricos** (MILLER et al., 2007; FERRAZ et al., 1999) e o
+    planejamento urbano (PRENZEL, 2004; FASA and CHAN, 2000).
+
+-   Além disso, também é importante para a identificação de áreas
+    vulneráveis a desastres naturais (EMBRAPA, 2014) e para **a
+    implementação de políticas públicas** (SOARES e ESPINDOLA, 2008).
+
+-   **O geoprocessamento é realizado através dos SIGs, constituídos de
+    ferramentas e técnicas para coletar, armazenar, processar, analisar
+    e visualizar os dados georreferenciados (BURROUGH and MCDONNELL,
+    1998).**
+
+-   Diversas informações podem ser encapsuladas em SIGs, tais como
+    informações geográficas e mapas, dados de sensores e imagens,
+    tabelas de variáveis assessórias, informações demográficas,
+    ecológicas e socioeconômicas (REIBEL, 2007).
+
+-   Os SIGs são ferramentas importantes para a tomada de decisão em
+    engenharia ambiental, uma vez que possibilitam a visualização de
     dados importantes no espaço, permitindo o diagnóstico ambiental e a
-    modelagem; eles também permitem a simulação de cenários futuros.
+    modelagem; eles também **permitem a simulação de cenários futuros.**
+
+## 2.2 Software R
+
+-   Segundo Dorman (2022), **o R pode ser utilizado como um Sistema de
+    Informação Geográfica (SIG), pois conta com pacotes e recursos de
+    visualização e processamento de dados georreferenciados, além de
+    vantagens relevantes em tarefas que envolvam automação e
+    reprodutibilidade, principalmente, quando comparado com abordagens
+    tradicionais de SIG, tais como os softwares QGIS e ArcGIS (ARCGIS,
+    2022).**
+
+-   O processamento de dados georreferenciados através da linguagem R
+    tomou grandes proporções após **a criação do pacote sp**,
+    **disponível em repositório CRANdesde 2005 (PEBESMA and BIVAND,
+    2005**; PEBESMA and BIVAND, 2020).
+
+-   **O pacote sp contém classes e métodos para a leitura e manipulação
+    de dados espaciais, tais como: linhas, pontos, polígonos e matrizes
+    espaciais (raster); para dados bidimensionais (2D) e tridimensionais
+    (3D), o pacote contém classes que determinam informações referentes
+    à localização espacial dos dados (x e y para 2D, e x, y e z para
+    dados 3D), enquanto os métodos possibilitam a seleção dos dados, o
+    alcance de coordenadas, o sistema de referência de coordenada dos
+    dados (seja graus 17 longitude/latitude, ou zona UTM), bem como a
+    reprojeção do sistema de referência de coordenadas, visualização,
+    impressão, entre outros (PEBESMA and BIVAND, 2005; BIVAND et al.,
+    2013).**
+
+-   **Pacotes como:**
+
+    -   **rgdal,**
+
+    -   **rgeos,**
+
+    -   **mapview,**
+
+    -   **ggplot e**
+
+    -   **plotly,**
+
+    **por exemplo, dão suporte para o pacote sp na manipulação e
+    visualização de dados espaciais (BIVAND, 2021).**
+
+-   **O pacote rgdal se encarrega de auxiliar na entrada/saída de
+    arquivos vetoriais e rasters e nos processos relacionados à projeção
+    e/ou transformação do sistema de referência de coordenada (BIVAND et
+    al., 2020).**
+
+-   **Já o pacote rgeos realiza tarefas que envolvem alterações
+    estruturais na geometria dos dados, em especial, vetores (BIVAND and
+    RUNDEL, 2020).**
+
+-   **O pacote mapview possui funções capazes de fornecer a visualização
+    interativa de mapas baseados em objetos espaciais (APPELHANS et al.,
+    2020).**
+
+-   **Enquanto isso, os pacotes ggplot2 (WICKHAM, 2016) e plotly
+    (SIEVERT, 2020) são utilizados como base para a visualização
+    estática e dinâmica, respectivamente, de gráficos de uso e ocupação
+    do solo.**
+
+-   Além dos pacotes listados acima, o processamento dos dados em
+    formato de séries temporais é possível a partir da utilização **do
+    pacote dplyr**, **capaz de de filtrar e organizar os dados de
+    matrizes espaciais em tabelas, possibilitando a criação dos gráficos
+    estáticos e dinâmicos** (WICKHAM et al., 2022).
+
+-   
