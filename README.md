@@ -25,7 +25,7 @@ Por que fazer ou por onde fazer?
 ## Trabalhos:
 
 1. Degradação da Amazonia
-Link: https://github.com/douradorobert/DegradacaoAmazonia/blob/9d8b0be67717df4176100aecbeb671d43e3699a0/Degrada%C3%A7%C3%A3o%20na%20Amaz%C3%B4nia.ipynb
+  Link: https://github.com/douradorobert/DegradacaoAmazonia/blob/9d8b0be67717df4176100aecbeb671d43e3699a0/Degrada%C3%A7%C3%A3o%20na%20Amaz%C3%B4nia.ipynb
 
 2. Degradação da Caatinga
-Link: https://github.com/Grazielafranca31/Degradacao-da-caatinga.git
+  Link: https://github.com/Grazielafranca31/Degradacao-da-caatinga.git
