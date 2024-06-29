@@ -20,3 +20,8 @@ Por que fazer?
 Como Fazer?  
 Por que fazer ou por onde fazer?
 
+# Inpira-te!
+
+## Trabalhos:
+
+Link: https://github.com/douradorobert/DegradacaoAmazonia/blob/9d8b0be67717df4176100aecbeb671d43e3699a0/Degrada%C3%A7%C3%A3o%20na%20Amaz%C3%B4nia.ipynb
