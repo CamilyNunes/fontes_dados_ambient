@@ -1,5 +1,6 @@
 # O que?
-Desmatamento ou degradação?
+Desmatamento ou degradação?  
+
 Desmatamento ambiental e degradação ambiental são a mesma coisa?
 
 Desmatamento ambiental:
